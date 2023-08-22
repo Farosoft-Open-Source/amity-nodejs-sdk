@@ -1,0 +1,16 @@
+{
+  "name": "amity-nodejs-sdk",
+  "version": "1.0.0",
+  "description": "Wrapper for Amity API as a NodeJS SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "amity",
+    "api",
+    "sdk"
+  ],
+  "author": "https://github.com/Farosoft-Open-Source",
+  "license": "GPL-3.0-or-later"
+}

@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Wrapper for Amity API as a NodeJS SDK",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "test"
+    "test": "jest",
+    "docs": "jsdoc -c ./jsdoc.config.json"
   },
   "keywords": [
     "amity",
@@ -12,5 +14,13 @@
     "sdk"
   ],
   "author": "https://github.com/Farosoft-Open-Source",
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "jest": "^29.6.3",
+    "jsdoc": "^4.0.2"
+  }
 }

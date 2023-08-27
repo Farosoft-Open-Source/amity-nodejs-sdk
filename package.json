@@ -1,6 +1,6 @@
 {
   "name": "@fs-open-source/amity-nodejs-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper for Amity API as a NodeJS SDK",
   "main": "index.js",
   "type": "module",

@@ -1,0 +1,4 @@
+jsdoc/
+.github/
+__tests__/
+jsdoc.config.json

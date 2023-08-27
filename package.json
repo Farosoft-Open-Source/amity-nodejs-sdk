@@ -1,5 +1,5 @@
 {
-  "name": "amity-nodejs-sdk",
+  "name": "@scope/amity-nodejs-sdk",
   "version": "1.0.0",
   "description": "Wrapper for Amity API as a NodeJS SDK",
   "main": "index.js",
@@ -13,6 +13,9 @@
     "api",
     "sdk"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "https://github.com/Farosoft-Open-Source",
   "license": "GPL-3.0-or-later",
   "dependencies": {

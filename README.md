@@ -5,7 +5,7 @@
 Welcome to the unofficial NODEJS SDK repository! This SDK is designed to simplify the integration and interaction with the AMITY SOCIAL REST API. It provides an easy-to-use set of functions and classes that abstract away the complexities of making API requests, handling responses, and managing authentication.
 
 ## Table of Contents
-
+- [Supported APIs](#supported-apis)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Authentication](#authentication)
@@ -13,18 +13,26 @@ Welcome to the unofficial NODEJS SDK repository! This SDK is designed to simplif
 - [Contributing](#contributing)
 - [License](#license)
 
+## Supported APIs
+Below is a table with a key of the supported API functions covered in this SDK and the key that matches it.
+|Functions |Supported |
+| :--- | :---: |
+|Authentication|Partial|
+
+Updated info on what APIs we currently support will be available in our latest [releases](https://github.com/Farosoft-Open-Source/amity-nodejs-sdk/releases)
+
 ## Installation
 
-To get started with the AMITY SOCIAL SDK, you can simply install it using npm (https://your-package-manager-link.com). Here's how you can do it using [example package manager]:
+To get started with the AMITY SOCIAL SDK, you can simply install it using npm (https://en.wikipedia.org/wiki/Npm). Here's how you can do it using [example package manager]:
 
 ```bash
-npm install your-api-sdk
+npm install @fs-open-source/amity-nodejs-sdk
 ```
 
-Or if you're using [another package manager]:
+Or if you're using yarn:
 
 ```bash
-yarn add your-api-sdk
+yarn add @fs-open-source/amity-nodejs-sdk
 ```
 
 ## Usage
@@ -32,52 +40,29 @@ yarn add your-api-sdk
 Using the AMITY SOCIAL SDK in your project is straightforward. First, import the SDK into your code:
 
 ```javascript
-const { YourAPIClient } = require('your-api-sdk');
-
-// Create a client instance
-const client = new YourAPIClient();
+const { AmityClient } = requir('@fs-open-source/amity-nodejs-sdk');
 ```
 
 ## Authentication
 
-Before you start making API requests, you'll need to set up authentication. The AMITY SOCIAL SDK supports various authentication methods, including API keys and OAuth tokens. Here's an example of how to set up API key authentication:
-
-```javascript
-const { YourAPIClient } = require('your-api-sdk');
-
-// Create a client instance with API key
-const client = new YourAPIClient({
-  apiKey: 'your-api-key',
-});
+Before you start making API requests, you'll need to set up authentication. The AMITY SOCIAL SDK supports various authentication methods, including API keys and OAuth tokens.
+The following list of environment variables need to be set for access to APIs requiring secure tokens.
+```bash
+X_SERVER_KEY
 ```
 
-Please refer to our official documentation for more information on authentication methods and how to set them up.
+Please refer to our official documentation for Amity (https://api-docs.amity.co/) more information on authentication methods and how to set them up.
 
 ## Examples
 
-### Making a GET Request
+### Creating user token for authentication
 
 ```javascript
-// Fetch resource by ID
-const resourceId = '123';
-const resource = await client.getResourceById(resourceId);
+// Creating user info
+const userId = '123456';
+const resource = await AmityClient.Authentication.getAuthenticationToken(userId);
 console.log('Resource:', resource);
 ```
-
-### Making a POST Request
-
-```javascript
-// Create a new resource
-const newResource = {
-  name: 'New Resource',
-  // other properties
-};
-
-const createdResource = await client.createResource(newResource);
-console.log('Created Resource:', createdResource);
-```
-
-You can find more usage examples and detailed API documentation in our [official documentation](https://link-to-your-documentation.com).
 
 ## Contributing
 
@@ -94,6 +79,5 @@ This SDK is released under the [Your License Name] License. See [LICENSE](LICENS
 
 ---
 
-If you have any questions, feel free to contact us at [support@your-api-name.com](mailto:support@your-api-name.com) or visit our website [https://www.your-api-name.com](https://www.your-api-name.com). We're here to help!
-```
-Remember to replace `AMITY SOCIAL`, `[example package manager]`, `[your-api-sdk]`, `[your-api-key]`, `[Your License Name]`, and any placeholders with the actual names, links, and information specific to your SDK and API.
+If you have any questions, feel free to contact us at through email [here](mailto:fsadmin@farosoft.io) or visit our website [https://farosoft.io](https://farosoft.io). We're here to help!
+

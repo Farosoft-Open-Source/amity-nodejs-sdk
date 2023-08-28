@@ -17,7 +17,7 @@ Welcome to the unofficial NODEJS SDK repository! This SDK is designed to simplif
 Below is a table with a key of the supported API functions covered in this SDK and the key that matches it.
 |Functions |Supported |
 | :--- | :---: |
-|Authentication|Partial|
+|Authentication|Full|
 
 Updated info on what APIs we currently support will be available in our latest [releases](https://github.com/Farosoft-Open-Source/amity-nodejs-sdk/releases)
 

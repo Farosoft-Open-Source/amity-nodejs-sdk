@@ -15,18 +15,21 @@ export default {
   async execute(path, headerType, headerData, method, data) {
     const headerKey = HEADERTYPES.get(headerType)
     const url = REGIONURLS[process.env.AMITY_REGION] + path
-    const headers = { accept: 'application/json' }
+    const headers = {
+      accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
     headers[headerKey] = headerData
 
     const request = {}
     request['method'] = method
 
     if (data) {
-      request['body'] = data
+      request['body'] = JSON.stringify(data)
     }
 
     request['headers'] = headers
-    console.log(JSON.stringify(request))
+    console.log(request)
     console.log(url)
 
     const response = (await fetch(url, request)).json()

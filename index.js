@@ -3,8 +3,4 @@ dotenv.config()
 
 import AmityClient from './src/client.js'
 
-//export default AmityClient
-
-module.exports = {
-  AmityClient,
-}
+export { AmityClient }

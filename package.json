@@ -1,11 +1,11 @@
 {
   "name": "@fs-open-source/amity-nodejs-sdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Wrapper for Amity API as a NodeJS SDK",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
     "docs": "jsdoc -c ./jsdoc.config.json"
   },
   "keywords": [
@@ -19,6 +19,8 @@
   "author": "https://github.com/Farosoft-Open-Source",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@jest/globals": "^29.6.4",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "node-fetch": "^3.3.2"
   },

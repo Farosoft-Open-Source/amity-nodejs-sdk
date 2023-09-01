@@ -53,6 +53,7 @@ Before you start making API requests, you'll need to set up authentication. The 
 The following list of environment variables need to be set for access to APIs requiring secure tokens.
 ```bash
 X_SERVER_KEY
+AMITY_BEARER_TOKEN
 ```
 
 Please refer to our official documentation for Amity (https://api-docs.amity.co/) more information on authentication methods and how to set them up.

@@ -11,13 +11,15 @@ export default {
    * @param {string} userId - User ID for user
    */
   async getAuthenticationToken(userId) {
-    return await NetworkClient.execute(
+    const token = await NetworkClient.execute(
       PATHS.GET_AUTH_TOKEN + `?userId=${userId}`,
       'XSERVERKEY',
       process.env.X_SERVER_KEY,
       'GET',
       null
     )
+
+    return { token: token }
   },
 
   /**
@@ -25,12 +27,14 @@ export default {
    * @param {string} userId - User ID for user
    */
   async getAuthenticationTokenV4(userId) {
-    return await NetworkClient.execute(
+    const token = await NetworkClient.execute(
       PATHS.POST_AUTH_TOKEN,
       'XSERVERKEY',
       process.env.X_SERVER_KEY,
       'POST',
       { userId: userId }
     )
+
+    return { token: token }
   },
 }

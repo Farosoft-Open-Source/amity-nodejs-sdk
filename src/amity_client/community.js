@@ -63,7 +63,7 @@ export default {
    * @param {isPrivate} - Type of community public/private. Defaults to public if not provided
    * @returns {object}
    */
-  async getCommunities(communityId, isPrivate) {
+  async getCommunitiesById(communityId, isPrivate) {
     return await NetworkClient.execute(
       PATHS.BASE + '/' + communityId + '?type=' + isPrivate
         ? 'internal'
@@ -81,13 +81,10 @@ export default {
    */
   async getCommunityUsers(communityId) {
     return await NetworkClient.execute(
-      PATHS.BASE + communityId + '/users',
+      PATHS.BASE + '/' + communityId + '/users',
       'BEARER',
       'Bearer ' + process.env.AMITY_BEARER_TOKEN,
-      'GET',
-      {
-        userIds: [userId],
-      }
+      'GET'
     )
   },
   /**
@@ -97,7 +94,7 @@ export default {
    */
   async addCommunityMember(communityId, userId) {
     return await NetworkClient.execute(
-      PATHS.BASE + communityId + '/users',
+      PATHS.BASE + '/' + communityId + '/users',
       'BEARER',
       'Bearer ' + process.env.AMITY_BEARER_TOKEN,
       'POST',
@@ -114,7 +111,7 @@ export default {
    */
   async addCommunityMembers(communityId, userIds) {
     return await NetworkClient.execute(
-      PATHS.BASE + communityId + '/users',
+      PATHS.BASE + '/' + communityId + '/users',
       'BEARER',
       'Bearer ' + process.env.AMITY_BEARER_TOKEN,
       'POST',
@@ -132,7 +129,7 @@ export default {
    */
   async removeCommunityMember(communityId, userIds) {
     return await NetworkClient.execute(
-      PATHS.BASE + communityId + '/users?userIds=' + userIds,
+      PATHS.BASE + '/' + communityId + '/users?userIds=' + userIds,
       'BEARER',
       'Bearer ' + process.env.AMITY_BEARER_TOKEN,
       'DELETE'
@@ -147,7 +144,7 @@ export default {
    */
   async banCommunityMember(communityId, userId) {
     return await NetworkClient.execute(
-      PATHS.BASE + communityId + '/users/ban',
+      PATHS.BASE + '/' + communityId + '/users/ban',
       'BEARER',
       'Bearer ' + process.env.AMITY_BEARER_TOKEN,
       'PUT',
@@ -163,7 +160,7 @@ export default {
    */
   async unbanCommunityMember(communityId, userId) {
     return await NetworkClient.execute(
-      PATHS.BASE + communityId + '/users/ban',
+      PATHS.BASE + '/' + communityId + '/users/ban',
       'BEARER',
       'Bearer ' + process.env.AMITY_BEARER_TOKEN,
       'PUT',

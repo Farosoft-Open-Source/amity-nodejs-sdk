@@ -7,4 +7,5 @@ export default {
   Authentication,
   Follow,
   Community,
+  UserV3,
 }

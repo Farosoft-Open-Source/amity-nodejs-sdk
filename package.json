@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "test": "mocha",
     "docs": "jsdoc -c ./jsdoc.config.json"
   },
   "keywords": [
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "jest": "^29.6.3",
-    "jsdoc": "^4.0.2"
+    "jsdoc": "^4.0.2",
+    "mocha": "^10.2.0"
   }
 }

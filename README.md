@@ -21,6 +21,7 @@ Below is a table with a key of the supported API functions covered in this SDK a
 |Follow|Partial|
 |Community|Partial|
 |UsersV3|Partial|
+|Sessions|Full|
 
 
 Updated info on what APIs we currently support will be available in our latest [releases](https://github.com/Farosoft-Open-Source/amity-nodejs-sdk/releases)
@@ -54,6 +55,7 @@ The following list of environment variables need to be set for access to APIs re
 ```bash
 X_SERVER_KEY
 AMITY_BEARER_TOKEN
+AMITY_API_KEY
 ```
 
 Please refer to our official documentation for Amity (https://api-docs.amity.co/) more information on authentication methods and how to set them up.

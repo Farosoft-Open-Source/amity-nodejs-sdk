@@ -1,8 +1,23 @@
 import NetworkClient from '../utils/networkClient.js'
+import Session from './session.js'
+import Authentication from './authentication.js'
 
 const PATHS = {
   BASE: `/api/v4/`,
   BASEV5: `/api/v5`,
+}
+
+function generateRandomString(length) {
+  const characters =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  let randomString = ''
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length)
+    randomString += characters.charAt(randomIndex)
+  }
+
+  return randomString
 }
 
 export default {
@@ -154,6 +169,30 @@ export default {
       'BEARER',
       'Bearer ' + process.env.AMITY_BEARER_TOKEN,
       'GET'
+    )
+  },
+
+  /**
+   * Get one user to follow another. SIDE EFFECT - Creates session for baseUserID
+   * @param {baseUserId} baseUserId - User who needs to follow another user
+   * @param {followId} followId - ID of user baseUserId wants to follow
+   */
+  async connectUserFollow(baseUserId, followId) {
+    const { token } = await Authentication.getAuthenticationToken(baseUserId)
+    console.log('Token: ' + token)
+
+    const { accessToken } = await Session.registerSession(
+      baseUserId,
+      generateRandomString(10),
+      token
+    )
+    console.log('Access Token: ' + accessToken)
+
+    return await NetworkClient.execute(
+      PATHS.BASE + `me/following/${followId}`,
+      'BEARER',
+      'Bearer ' + accessToken,
+      'POST'
     )
   },
 }
